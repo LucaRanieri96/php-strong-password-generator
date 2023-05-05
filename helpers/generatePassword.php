@@ -12,29 +12,23 @@ $simboli["caratteri_speciali"] = '!?~@#-_+<>[]{}';
 
 // controllo l'array
 //var_dump($simboli);
-
-
+$newSimbols = implode('', $simboli);
 
 // l'idea per generare la password è: prendo l'array di simboli e li mescolo tra di loro, poi da questo array mescolato voglio prendere randomicamente tanti simboli quanti sono quelli richiesti dall'utente e generare così una nuova password
-function generatePassword($passwordLength, $simboli)
+function generatePassword($passwordLength, $newSimbols)
 {
   // mi preparo la stringa per la password
   $password = "";
+  // converto la stringa in un array di caratteri
+  $newSimbolsArray = str_split($newSimbols);
   // mescolo i simboli
-  shuffle($simboli);
+  shuffle($newSimbolsArray);
   // ciclo dentro l'array simboli quante volte mi ha detto l'utente
   for ($i = 0; $i < $passwordLength; $i++) {
-    // mi prendo una chiave random dall'array
-    $key = array_rand($simboli);
-    //ora devo prendermi un carattere random dagli array selezionati dentro i simboli
-    $char = substr($simboli[$key], rand(0, strlen($simboli[$key]) - 1), 1);
+    $char = rand(0, count($newSimbolsArray) - 1);
     // e adesso uso la concatenazione per generare una password
-    $password = $password . $char;
+    $password = $password . $newSimbolsArray[$char];
   }
   // adesso posso restituire la password
   return $password;
 }
-
-
-
-?>

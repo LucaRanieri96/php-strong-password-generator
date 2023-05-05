@@ -39,7 +39,7 @@ include __DIR__ . '/helpers/generatePassword.php';
           // metto l'input in una variabile
           $passwordLength = $_GET["input"];
           // ora posso richiamare la password e stamparla in pagina
-          $password = generatePassword($passwordLength, $simboli);
+          $password = generatePassword($passwordLength, $newSimbols);
           echo $password;
           ?>
         </div>
