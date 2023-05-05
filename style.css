@@ -1,0 +1,9 @@
+body {
+    padding: 10vh 0;
+    background-color: #121212;
+    color: rgb(220, 220, 220);
+}
+
+h1,h2{
+    color: rgb(255, 162, 0);
+}

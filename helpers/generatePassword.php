@@ -13,8 +13,7 @@ $simboli["caratteri_speciali"] = '!?~@#-_+<>[]{}';
 // controllo l'array
 //var_dump($simboli);
 
-// metto l'input in una variabile
-$passwordLength = $_GET["input"];
+
 
 // l'idea per generare la password è: prendo l'array di simboli e li mescolo tra di loro, poi da questo array mescolato voglio prendere randomicamente tanti simboli quanti sono quelli richiesti dall'utente e generare così una nuova password
 function generatePassword($passwordLength, $simboli)
@@ -36,8 +35,6 @@ function generatePassword($passwordLength, $simboli)
   return $password;
 }
 
-// ora posso richiamare la password e stamparla in pagina
-$password = generatePassword($passwordLength, $simboli);
-echo $password;
+
 
 ?>
