@@ -1,5 +1,16 @@
 <?php
-var_dump($_GET["input"])
+// controllo di ricevere l'input
+var_dump($_GET["input"]);
+
+// mi creo un array per i simboli da utilizzare nella funzione genera password
+$simboli = array();
+
+$simboli["minuscole"] = 'abcdefghijklmnopqrstuvwxyz';
+$simboli["maiuscole"] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$simboli["numeri"] = '1234567890';
+$simboli["caratteri_speciali"] = '!?~@#-_+<>[]{}';
+
+var_dump($simboli);
 
 ?>
 
@@ -16,11 +27,10 @@ var_dump($_GET["input"])
 <body>
   <form action="" method="get">
     <div class="input-group mb-3">
-      <input type="number" class="form-control" placeholder="" aria-label="Username"
-        aria-describedby="basic-addon1" name="input">
+      <input type="number" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1"
+        name="input">
       <button type="submit">Submit</button>
     </div>
-
   </form>
 </body>
 
